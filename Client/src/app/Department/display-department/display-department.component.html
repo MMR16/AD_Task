@@ -1,0 +1,24 @@
+<div class="bd-example">
+    <button class="btn btn-primary m-4" (click)="AddDepartment()">Add Department</button>
+    <table class="table table-striped-columns">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Manager Name</th>
+                <th scope="col" class="text-center">operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dept of departments;let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{dept.name}}</td>
+                <td>{{dept.managerName}}</td>
+                <td class="d-flex justify-content-around">
+                    <button (click)="EditDepartment(dept.id)" class="btn btn-primary">Edit</button>
+                    <button (click)="deleteDepartment(dept.id)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

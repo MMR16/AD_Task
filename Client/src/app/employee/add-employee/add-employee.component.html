@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Fill Employee Data</h1>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+
+        <div class="form-floating mb-3">
+            <input formControlName="name" type="text" class="form-control" id="NameInput" placeholder="Employee name">
+            <label for="NameInput">Employee Name</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input formControlName="salary" type="number" class="form-control" id="SalaryInput" placeholder="10000">
+            <label for="SalaryInput">Employee Salary</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <span>Select Manager</span>
+            <select formControlName="managerId" class="form-select" aria-label="Default select example">
+                <option *ngFor="let emp of employees" value={{emp.id}}>{{emp.name}}</option>
+            </select>
+        </div>
+
+        <div class="form-floating mb-3">
+            <span>Select Department</span>
+            <select formControlName="departmentId" class="form-select" aria-label="Default select example">
+                <option *ngFor="let dept of departments" value={{dept.id}}>{{dept.name}}</option>
+            </select>
+        </div>
+        <br>
+        <button type="submit" [disabled]="employeeForm.invalid" class="btn btn-primary">Add Employee</button>
+    </form>
+</div>

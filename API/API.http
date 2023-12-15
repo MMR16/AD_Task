@@ -1,0 +1,61 @@
+﻿@API_HostAddress = https://localhost:7223
+
+GET {{API_HostAddress}}/api/department
+
+###
+
+POST {{API_HostAddress}}/api/department
+Content-Type: application/json
+
+{
+  //AddDepartmentDto
+}
+
+###
+
+PUT {{API_HostAddress}}/api/department
+Content-Type: application/json
+
+{
+  //UpdateDepartmentDto
+}
+
+###
+
+DELETE {{API_HostAddress}}/api/department?id=0
+
+###
+
+GET {{API_HostAddress}}/api/department/{id:int}?id=0
+
+###
+
+GET {{API_HostAddress}}/api/employee
+
+###
+
+POST {{API_HostAddress}}/api/employee
+Content-Type: application/json
+
+{
+  //AddEmployeeDto
+}
+
+###
+
+PUT {{API_HostAddress}}/api/employee
+Content-Type: application/json
+
+{
+  //UpdateEmployeeDto
+}
+
+###
+
+DELETE {{API_HostAddress}}/api/employee?id=0
+
+###
+
+GET {{API_HostAddress}}/api/employee/{id:int}?id=0
+
+###

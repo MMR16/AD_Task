@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Fill Department Data</h1>
+    <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
+        <div class="form-floating mb-3">
+            <input formControlName="name" type="text" class="form-control" id="NameInput" placeholder="Employee name">
+            <label for="NameInput">Department Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <span>Select Manager</span>
+            <select formControlName="managerId" class="form-select" aria-label="Default select example">
+                <option *ngFor="let emp of employees" value={{emp.id}}>{{emp.name}}</option>
+            </select>
+        </div>
+        <br>
+        <button type="submit" [disabled]="departmentForm.invalid" class="btn btn-primary">Update Department</button>
+    </form>
+
+</div>
